@@ -10,18 +10,42 @@
 </head>
 <body>
     <div class="container">
-        <nav class="flex items-center justify-between p-4">
+        <nav class="nav-sticky flex items-center justify-between py-5 px-6 xl:px-10 border-b-transparent">
           <div class="main-menu flex items-center gap-5">
             <h2 class="text-2xl font-playfair font-semibold me-5">LMS</h2>
             <a href="#course" class="text-md cursor-pointer hover:scale-105 transition-all duration-300">Course</a>
             <a href="#tasks" class="text-md cursor-pointer hover:scale-105 transition-all duration-300">Tasks</a>
           </div>
-          <span
+          {{-- <span
             class="sign-in-btn text-slate-50 font-semibold border-2 border-transparent bg-neutral-950 px-5 py-2 rounded-full hover:bg-transparent hover:border-neutral-950 hover:text-neutral-800 transition-all duration-500 "
             ><a href="#"> Sign In </a></span
-          >
+          > --}}
+        <button type="button" class="flex gap-x-3 py-1 px-3 items-center text-sm rounded-lg md:me-0 focus:ring-2 focus:ring-gray-400 " id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+        <span class="sr-only">Open user menu</span>
+        <img class="w-10 h-10 rounded-full object-cover ring-1 ring-neutral-800" src="https://erinejkt48-profile.vercel.app/img/profile.jpg" alt="user photo">
+        <span class="font-semibold text-base">Hi, Aldrin's Girlfriend</span>
+    </button>
+      <!-- Dropdown menu -->
+      <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow" id="user-dropdown">
+        <div class="px-4 py-3">
+          <span class="block font-semibold text-sm text-neutral-900 ">Aldrin's Girlfriend</span>
+          <span class="block text-sm  text-gray-500 truncate dark:text-gray-400">aldrinerine@gmail.com</span>
+        </div>
+        <ul class="py-2" aria-labelledby="user-menu-button">
+          <li>
+            <a href="#" class="block px-4 py-2 text-sm text-neutral-800 hover:bg-gray-100 ">Dashboard</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 text-sm text-neutral-800 hover:bg-gray-100 ">Settings</a>
+          </li>
+          <li>
+            <a href="#" class="block px-4 py-2 text-sm text-neutral-800 hover:bg-gray-100 ">Sign out</a>
+          </li>
+        </ul>
+      </div>
+
         </nav>
-        <div class="hero-section flex flex-col items-center p-5 my-20 gap-10">
+        <div class="hero-section flex flex-col items-center p-5 mb-20 mt-56 gap-10">
           <h1 class="text-3xl w-[90%] text-center font-playfair ">
             Welcome to Learning Management System
           </h1>
@@ -55,7 +79,7 @@
               <input
                 type="search"
                 id="default-search"
-                class="block w-full p-2 ps-12 text-md text-gray-900 border border-neutral-900 rounded-full bg-gray-50 focus:ring-blue-500 focus:border-blue-500"
+                class="block w-full p-2 ps-12 text-md text-gray-900 border-2 border-neutral-900 rounded-full bg-gray-50 focus:border-0 focus:border-opacity-0 focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
                 placeholder="Search..."
                 required
               />
@@ -117,14 +141,14 @@
                         </span>
                         <div class="task row-start-2 flex flex-col items-center gap-2 px-1 py-5 w-[75px] bg-orange-100 rounded-3xl text-center">
                             <label for="task-checkbox-1">
-                                <input id="task-checkbox-1" type="checkbox" class="w-4 h-4 text-neutral-700 bg-transparent border-2 border-neutral-700 rounded focus:ring-neutral-700" name="" id="">
+                                <input id="task-checkbox-1" type="checkbox" class="w-4 h-4 text-neutral-700 bg-transparent border-2 border-neutral-700 rounded focus:ring-neutral-700" name="" id="" checked disabled>
                                 <h3 class="font-semibold text-sm">Linear Algebra</h3>
                                 <p class="text-xs">09:00 AM</p>
                             </label>
                         </div>
                         <div class="task row-start-3 flex flex-col items-center gap-2 px-1 py-5 w-[75px] bg-pink-200 rounded-3xl text-center">
                             <label for="task-checkbox-2">
-                                <input id="task-checkbox-2" type="checkbox" class="w-4 h-4 text-neutral-700 bg-transparent border-2 border-neutral-700 rounded focus:ring-neutral-700" name="" id="">
+                                <input id="task-checkbox-2" type="checkbox" class="w-4 h-4 text-neutral-700 bg-transparent border-2 border-neutral-700 rounded focus:ring-neutral-700" name="" id="" checked disabled>
                                 <h3 class="font-semibold text-sm">Operating System</h3>
                                 <p class="text-xs">09:00 AM</p>
                             </label>
@@ -141,7 +165,7 @@
                     </span>
                     <div class="task col-start-3 row-start-2 flex flex-col items-center gap-2 px-1 py-5 w-[75px] bg-lime-400 rounded-3xl text-center">
                         <label for="task-checkbox-3">
-                            <input id="task-checkbox-3" type="checkbox" class="w-4 h-4 text-neutral-700 bg-transparent border-2 border-neutral-700 rounded focus:ring-neutral-700" name="" id="">
+                            <input id="task-checkbox-3" type="checkbox" class="w-4 h-4 text-neutral-700 bg-transparent border-2 border-neutral-700 rounded focus:ring-neutral-700" name="" id="" checked disabled>
                             <h3 class="font-semibold text-sm">Interface Design</h3>
                             <p class="text-xs">09:00 AM</p>
                         </label>
@@ -153,7 +177,7 @@
                     </span>
                     <div class="task col-start-4 row-start-2 flex flex-col items-center gap-2 px-1 py-5 w-[75px] bg-orange-100 rounded-3xl text-center">
                         <label for="task-checkbox-4">
-                            <input id="task-checkbox-4" type="checkbox" class="w-4 h-4 text-neutral-700 bg-transparent border-2 border-neutral-700 rounded focus:ring-neutral-700" name="" id="">
+                            <input id="task-checkbox-4" type="checkbox" class="w-4 h-4 text-neutral-700 bg-transparent border-2 border-neutral-700 rounded focus:ring-neutral-700" name="" id="" disabled>
                             <h3 class="font-semibold text-sm">Linear Algebra</h3>
                             <p class="text-xs">09:00 AM</p>
                         </label>
@@ -170,7 +194,7 @@
                     </span>
                     <div class="task col-start-6 row-start-2 flex flex-col items-center gap-2 px-1 py-5 w-[75px] bg-indigo-500 rounded-3xl text-center">
                         <label for="task-checkbox-5">
-                            <input id="task-checkbox-5" type="checkbox" class="w-4 h-4 text-neutral-700 bg-transparent border-2 border-neutral-700 rounded focus:ring-neutral-700" name="" id="">
+                            <input id="task-checkbox-5" type="checkbox" class="w-4 h-4 text-neutral-700 bg-transparent border-2 border-neutral-700 rounded focus:ring-neutral-700" name="" id="" disabled>
                             <h3 class="font-semibold text-sm">Software Engine</h3>
                             <p class="text-xs">09:00 AM</p>
                         </label>
