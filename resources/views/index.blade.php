@@ -12,7 +12,7 @@
     <div class="container">
         <nav class="nav-sticky flex items-center justify-between p-4 xl:px-24 z-30 transition-all duration-700 top-0 left-0 w-full border-transparent">
           <div class="main-menu flex items-center gap-5">
-            <h2 class="text-2xl font-playfair font-semibold me-5">LMS</h2>
+            <h2 class="text-2xl font-playfair font-semibold me-2 sm:me-5">LMS</h2>
             <a href="#course" class="text-md cursor-pointer hover:scale-105 transition-all duration-300">Course</a>
             <a href="#tasks" class="text-md cursor-pointer hover:scale-105 transition-all duration-300">Tasks</a>
           </div>
@@ -23,7 +23,7 @@
         <button type="button" class="flex gap-x-3 py-1 px-3 items-center text-sm rounded-lg transition-all duration-500 hover:ring-2 hover:ring-gray-600 hover:scale-90 md:me-0 focus:ring-2 focus:ring-gray-400 focus:scale-90" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
         <span class="sr-only">Open user menu</span>
         <img class="w-10 h-10 rounded-full object-cover ring-1 ring-neutral-800" src="https://erinejkt48-profile.vercel.app/img/profile.jpg" alt="user photo">
-        <span class="font-semibold text-base">Hi, Aldrin's Girlfriend</span>
+        <span class="font-semibold text-base hidden sm:inline">Hi, Aldrin's Girlfriend</span>
     </button>
       <!-- Dropdown menu -->
       <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow" id="user-dropdown">
@@ -46,17 +46,17 @@
 
         </nav>
         <div class="hero-section flex flex-col items-center p-5 mb-20 mt-24 gap-10">
-          <h1 class="text-3xl w-[90%] text-center font-playfair ">
+          <h1 class="text-3xl sm:text-4xl lg:text-5xl w-[90%] text-center font-playfair">
             Welcome to Learning Management System
           </h1>
 
-          <form class="max-w-lg mx-auto">
+          <form class="max-w-[260px] sm:max-w-sm w-full">
             <label
               for="default-search"
               class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
               >Search</label
             >
-            <div class="relative max-w-lg w-full">
+            <div class="relative w-full">
               <div
                 class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none"
               >
@@ -90,7 +90,7 @@
                 Search
               </button> -->
             </div>
-            <p class="text-center text-sm mt-3 text-neutral-500">
+            <p class="text-center text-sm sm:text-base mt-3 text-neutral-500">
               You can search course or task
             </p>
           </form>
