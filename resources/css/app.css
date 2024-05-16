@@ -12,12 +12,12 @@
         @apply rounded-full bg-slate-200;
     }
 
-    .sticky-nav {
+    .sticky-navbar {
         @apply max-h-[100px] backdrop-blur-lg transition-all duration-700 border-b border-neutral-300;
     }
-    /* .nav-sticky {
+    .nav-sticky {
         @apply z-30 transition-all duration-700 top-0 left-0 sticky w-full;
-    } */
+    }
     .hover-img {
         @apply transition-transform duration-300 hover:scale-125 hover:rotate-6;
     }

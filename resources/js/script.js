@@ -110,9 +110,9 @@ const navbar = document.querySelector("nav.nav-sticky");
 let prevScrollPos = window.scrollY;
 
 const handleScroll = () => {
-    let header = document.querySelector("nav");
+    let header = document.querySelector("nav.nav-sticky");
     if (header) {
-        header.classList.toggle("sticky-nav", window.scrollY > 0);
+        header.classList.toggle("sticky-navbar", window.scrollY > 0);
         // navbar.classList.toggle("border-b", window.scrollY > 0);
         // navbar.classList.toggle("border-neutral-300", window.scrollY > 0);
     }
