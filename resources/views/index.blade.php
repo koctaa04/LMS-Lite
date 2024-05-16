@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="container">
-        <nav class="nav-sticky flex items-center justify-between py-5 px-6 xl:px-10 border-b-transparent">
+        <nav class="nav-sticky flex items-center justify-between p-4 xl:px-24 z-30 transition-all duration-700 top-0 left-0 w-full border-transparent">
           <div class="main-menu flex items-center gap-5">
             <h2 class="text-2xl font-playfair font-semibold me-5">LMS</h2>
             <a href="#course" class="text-md cursor-pointer hover:scale-105 transition-all duration-300">Course</a>
@@ -20,7 +20,7 @@
             class="sign-in-btn text-slate-50 font-semibold border-2 border-transparent bg-neutral-950 px-5 py-2 rounded-full hover:bg-transparent hover:border-neutral-950 hover:text-neutral-800 transition-all duration-500 "
             ><a href="#"> Sign In </a></span
           > --}}
-        <button type="button" class="flex gap-x-3 py-1 px-3 items-center text-sm rounded-lg md:me-0 focus:ring-2 focus:ring-gray-400 " id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
+        <button type="button" class="flex gap-x-3 py-1 px-3 items-center text-sm rounded-lg transition-all duration-500 hover:ring-2 hover:ring-gray-600 hover:scale-90 md:me-0 focus:ring-2 focus:ring-gray-400 focus:scale-90" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
         <span class="sr-only">Open user menu</span>
         <img class="w-10 h-10 rounded-full object-cover ring-1 ring-neutral-800" src="https://erinejkt48-profile.vercel.app/img/profile.jpg" alt="user photo">
         <span class="font-semibold text-base">Hi, Aldrin's Girlfriend</span>
@@ -45,7 +45,7 @@
       </div>
 
         </nav>
-        <div class="hero-section flex flex-col items-center p-5 mb-20 mt-56 gap-10">
+        <div class="hero-section flex flex-col items-center p-5 mb-20 mt-24 gap-10">
           <h1 class="text-3xl w-[90%] text-center font-playfair ">
             Welcome to Learning Management System
           </h1>
@@ -107,25 +107,33 @@
                     <li class="transition-all duration-300 hover:scale-110 flex items-center gap-3 rounded-full ring-2 ring-neutral-900">Year <svg xmlns="http://www.w3.org/2000/svg" height="15" class="self-center rounded-full ring-2 ring-neutral-900" viewBox="0 -960 960 960" width="15"><path d="M480-240 240-480l56-56 144 144v-368h80v368l144-144 56 56-240 240Z"/></svg></li>
                 </ul>
             </div>
-            <div class="grid grid-flow-row grid-cols-1 sm:grid-cols-2 w-full p-2 gap-2 place-content-center [&>.matkul]:cursor-pointer">
-                <div class="matkul flex flex-col items-center transition-all duration-300 hover:scale-110 hover:p-3">
-                    {{-- <img src="../img/Search.png" class="w-full" height="200px" alt=""> --}}
-                    <div class="kotak w-full max-w-[240px] h-[200px] rounded-xl bg-slate-200"></div>
+            <div class="grid grid-flow-row grid-cols-1 sm:grid-cols-2 w-full p-2 gap-2 place-content-center [&>.matkul]:cursor-pointer [&>.matkul>span]:img-style [&>.matkul>span>img]:hover-img [&>.matkul>span>img]:object-cover">
+                <div class="matkul flex flex-col items-center">
+                    <span>
+                        <img src="{{ asset('img/Operating System.jpg') }}" class="w-full" height="200px" alt="">
+                    </span>
+                    {{-- <div class="kotak "></div> --}}
                     <h2 class="text-lg font-semibold">Operating System</h2>
                 </div>
-                <div class="matkul flex flex-col items-center transition-all duration-300 hover:scale-110 hover:p-3">
-                    {{-- <img src="../img/Search.png" class="w-full" height="200px" alt=""> --}}
-                    <div class="kotak w-full max-w-[240px] h-[200px] rounded-xl bg-slate-200"></div>
+                <div class="matkul flex flex-col items-center">
+                    <span>
+                        <img src="{{ asset('img/Databse Practicum.jpg') }}" class="w-full"height="200px" alt="">
+                    </span>
+                    {{-- <div class="kotak "></div> --}}
                     <h2 class="text-lg font-semibold">Database Practicum</h2>
                 </div>
-                <div class="matkul flex flex-col items-center transition-all duration-300 hover:scale-110 hover:p-3">
-                    {{-- <img src="../img/Search.png" class="w-full" height="200px" alt=""> --}}
-                    <div class="kotak w-full max-w-[240px] h-[200px] rounded-xl bg-slate-200"></div>
+                <div class="matkul flex flex-col items-center">
+                    <span>
+                        <img src="{{ asset('img/Interface Design.jpg') }}" class="w-full" height="200px" alt="">
+                    </span>
+                    {{-- <div class="kotak "></div> --}}
                     <h2 class="text-lg font-semibold">Interface Design</h2>
                 </div>
-                <div class="matkul flex flex-col items-center transition-all duration-300 hover:scale-110 hover:p-3">
-                    {{-- <img src="../img/Search.png" class="w-full" height="200px" alt=""> --}}
-                    <div class="kotak w-full max-w-[240px] h-[200px] rounded-xl bg-slate-200"></div>
+                <div class="matkul flex flex-col items-center">
+                    <span>
+                        <img src="{{ asset('img/Linear Algebra.jpg') }}" class="w-full"height="200px" alt="">
+                    </span>
+                    {{-- <div class="kotak "></div> --}}
                     <h2 class="text-lg font-semibold">Linear Algebra</h2>
                 </div>
             </div>

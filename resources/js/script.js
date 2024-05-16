@@ -106,13 +106,15 @@ const handleLoad = () => {
 };
 
 const nav = document.querySelector("nav ul");
-const navbar = document.querySelector("nav");
+const navbar = document.querySelector("nav.nav-sticky");
 let prevScrollPos = window.scrollY;
 
 const handleScroll = () => {
     let header = document.querySelector("nav");
     if (header) {
-        header.classList.toggle("sticky", window.scrollY > 0);
+        header.classList.toggle("sticky-nav", window.scrollY > 0);
+        // navbar.classList.toggle("border-b", window.scrollY > 0);
+        // navbar.classList.toggle("border-neutral-300", window.scrollY > 0);
     }
     let currentScrollPos = window.scrollY;
 

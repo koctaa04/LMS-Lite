@@ -12,10 +12,16 @@
         @apply rounded-full bg-slate-200;
     }
 
-    .sticky {
-        @apply border-b border-neutral-300 max-h-[100px] backdrop-blur-lg transition-all duration-700;
+    .sticky-nav {
+        @apply max-h-[100px] backdrop-blur-lg transition-all duration-700 border-b border-neutral-300;
     }
-    .nav-sticky {
-        @apply z-30 transition-all duration-700 top-0 left-0 fixed box-border w-full;
+    /* .nav-sticky {
+        @apply z-30 transition-all duration-700 top-0 left-0 sticky w-full;
+    } */
+    .hover-img {
+        @apply transition-transform duration-300 hover:scale-125 hover:rotate-6;
+    }
+    .img-style {
+        @apply max-w-[240px] h-[200px] rounded-xl overflow-hidden;
     }
 }
