@@ -97,9 +97,9 @@
         </div>
 
         <section id="course" class="course-section flex flex-col gap-2 p-4 items-center">
-            <h2 class="text-2xl font-semibold ">Course</h2>
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold ">Course</h2>
             <div class="contain mx-2 p-2 max-w-full">
-                <ul class="course-option flex overflow-x-auto p-2 items-center gap-2 w-full [&>li]:font-semibold [&>li]:px-3 [&>li]:py-1 [&>li]:text-sm [&>li]:cursor-pointer">
+                <ul class="course-option flex overflow-x-auto p-2 items-center gap-2 w-full [&>li]:font-semibold [&>li]:px-3 [&>li]:py-1 [&>li]:text-sm [&>li]:cursor-pointer sm:[&>li]:text-base lg:[&>li]:text-lg">
                     <li class="course-active transition-all duration-300 hover:scale-110">All</li>
                     <li class="transition-all duration-300 hover:scale-110">Practice</li>
                     <li class="transition-all duration-300 hover:scale-110">Theory</li>
@@ -107,34 +107,48 @@
                     <li class="transition-all duration-300 hover:scale-110 flex items-center gap-3 rounded-full ring-2 ring-neutral-900">Year <svg xmlns="http://www.w3.org/2000/svg" height="15" class="self-center rounded-full ring-2 ring-neutral-900" viewBox="0 -960 960 960" width="15"><path d="M480-240 240-480l56-56 144 144v-368h80v368l144-144 56 56-240 240Z"/></svg></li>
                 </ul>
             </div>
-            <div class="grid grid-flow-row grid-cols-1 sm:grid-cols-2 w-full p-2 gap-2 place-content-center [&>.matkul]:cursor-pointer [&>.matkul>span]:img-style [&>.matkul>span>img]:hover-img [&>.matkul>span>img]:object-cover">
-                <div class="matkul flex flex-col items-center">
+            <div class="grid max-w-xl lg:max-w-4xl grid-flow-row grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 w-full p-2 gap-2 place-content-center [&>.matkul]:cursor-pointer [&>.matkul>span]:img-style [&>.matkul>span>img]:hover-img [&>.matkul>span>img]:object-cover">
+                <div class="matkul flex flex-col items-center gap-y-2 mb-3">
                     <span>
-                        <img src="{{ asset('img/Operating System.jpg') }}" class="w-full" height="200px" alt="">
+                        <img src="{{ asset('img/Operating System.jpg') }}" class="w-full h-[170px] sm:h-[210px]"  alt="">
                     </span>
                     {{-- <div class="kotak "></div> --}}
-                    <h2 class="text-lg font-semibold">Operating System</h2>
+                    <h2 class="text-base sm:text-lg font-semibold">Operating System</h2>
                 </div>
-                <div class="matkul flex flex-col items-center">
+                <div class="matkul flex flex-col items-center gap-y-2 mb-3">
                     <span>
-                        <img src="{{ asset('img/Databse Practicum.jpg') }}" class="w-full"height="200px" alt="">
+                        <img src="{{ asset('img/Databse Practicum.jpg') }}" class="w-full h-[170px] sm:h-[210px]" alt="">
                     </span>
                     {{-- <div class="kotak "></div> --}}
-                    <h2 class="text-lg font-semibold">Database Practicum</h2>
+                    <h2 class="text-base sm:text-lg font-semibold">Database Practicum</h2>
                 </div>
-                <div class="matkul flex flex-col items-center">
+                <div class="matkul flex flex-col items-center gap-y-2 mb-3">
                     <span>
-                        <img src="{{ asset('img/Interface Design.jpg') }}" class="w-full" height="200px" alt="">
+                        <img src="{{ asset('img/Interface Design.jpg') }}" class="w-full h-[170px] sm:h-[210px]"  alt="">
                     </span>
                     {{-- <div class="kotak "></div> --}}
-                    <h2 class="text-lg font-semibold">Interface Design</h2>
+                    <h2 class="text-base sm:text-lg font-semibold">Interface Design</h2>
                 </div>
-                <div class="matkul flex flex-col items-center">
+                <div class="matkul flex flex-col items-center gap-y-2 mb-3">
                     <span>
-                        <img src="{{ asset('img/Linear Algebra.jpg') }}" class="w-full"height="200px" alt="">
+                        <img src="{{ asset('img/Linear Algebra.jpg') }}" class="w-full h-[170px] sm:h-[210px]" alt="">
                     </span>
                     {{-- <div class="kotak "></div> --}}
-                    <h2 class="text-lg font-semibold">Linear Algebra</h2>
+                    <h2 class="text-base sm:text-lg font-semibold">Linear Algebra</h2>
+                </div>
+                <div class="matkul flex flex-col items-center gap-y-2 mb-3">
+                    <span>
+                        <img src="{{ asset('img/Algorithms and Data Structures.jpg') }}" class="w-full h-[170px] sm:h-[210px]" alt="">
+                    </span>
+                    {{-- <div class="kotak "></div> --}}
+                    <h2 class="text-base sm:text-lg font-semibold">Algorithms and Data Structures</h2>
+                </div>
+                <div class="matkul flex flex-col items-center gap-y-2 mb-3">
+                    <span>
+                        <img src="{{ asset('img/Software Engineering.jpg') }}" class="w-full h-[170px] sm:h-[210px]" alt="">
+                    </span>
+                    {{-- <div class="kotak "></div> --}}
+                    <h2 class="text-base sm:text-lg font-semibold">Software Engineering</h2>
                 </div>
             </div>
         </section>

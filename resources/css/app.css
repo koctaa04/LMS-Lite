@@ -22,6 +22,6 @@
         @apply transition-transform duration-300 hover:scale-125 hover:rotate-6;
     }
     .img-style {
-        @apply max-w-[240px] h-[200px] rounded-xl overflow-hidden;
+        @apply max-w-[240px] h-[170px] sm:h-[210px] rounded-xl overflow-hidden;
     }
 }
