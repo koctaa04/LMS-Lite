@@ -46,11 +46,11 @@
 
         </nav>
         <div class="hero-section flex flex-col items-center p-5 mb-20 mt-24 gap-10">
-          <h1 class="text-3xl sm:text-4xl lg:text-5xl w-[90%] text-center font-playfair">
-            Welcome to Learning Management System
+          <h1 class="text-3xl min-[450px]:text-4xl sm:text-5xl lg:text6xl xl:text-[4em] w-[90%] text-center font-playfair">
+            Welcome to Learning<br> Management System
           </h1>
 
-          <form class="max-w-[260px] sm:max-w-sm w-full">
+          <form class="max-w-[220px] min-[450px]:max-w-[260px] sm:max-w-xs lg:max-w-sm w-full">
             <label
               for="default-search"
               class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -153,77 +153,87 @@
             </div>
         </section>
         <section id="tasks" class="tasks-section flex flex-col gap-2 p-4 items-center">
-            <h2 class="text-2xl font-semibold ">Tasks</h2>
-            <div class="mx-2 p-2 max-w-full">
-                <div class="date-of-week grid grid-cols-auto grid-rows-3 overflow-x-auto p-2 place-items-center gap-x-4 gap-y-2 w-full [&>span]:font-semibold [&>span]:px-2 [&>span]:py-3 [&>span]:text-base [&>span]:cursor-pointer [&>span]:w-max [&>div.task>label]:cursor-pointer">
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold ">Tasks</h2>
+            <div class="mx-2 p-2 w-full flex justify-center">
+                <div class="date-of-week grid max-w-lg sm:max-w-2xl lg:max-w-3xl xl:max-w-4xl w-full grid-cols-r-7 grid-rows-3 overflow-x-auto p-2 place-items-center gap-x-4 gap-y-2 [&>span]:font-semibold [&>span]:px-2 [&>span]:py-3 [&>span]:text-base lg:[&>span]:text-lg [&>span]:cursor-pointer  [&>div.task>label]:cursor-pointer">
                         <span class="date-badge col-start-1 flex flex-col gap-1 items-center justify-center">
                             <p class="month">Apr</p>
-                            <h3 class="date font-bold text-2xl">21</h3>
+                            <h3 class="date font-bold text-2xl lg:text-3xl">21</h3>
                             <p class="day">Sun</p>
                         </span>
-                        <div class="task row-start-2 flex flex-col items-center gap-2 px-1 py-5 w-[75px] bg-orange-100 rounded-3xl text-center">
-                            <label for="task-checkbox-1">
-                                <input id="task-checkbox-1" type="checkbox" class="w-4 h-4 text-neutral-700 bg-transparent border-2 border-neutral-700 rounded focus:ring-neutral-700" name="" id="" checked disabled>
-                                <h3 class="font-semibold text-sm">Linear Algebra</h3>
-                                <p class="text-xs">09:00 AM</p>
-                            </label>
+                        <div class="task row-start-2 flex flex-col items-center gap-y-1 px-3 py-2 w-[110px] bg-orange-100 rounded-xl text-left">
+                                <h3 class="font-semibold text-base leading-tight">Linear Algebra</h3>
+                                <span class="w-full h-[2px] bg-neutral-900 rounded"></span>
+                                <p class="text-sm pb-2 leading-tight">Lorem ipsum dolor sit.</p>
+                                <span class="flex items-center gap-2">
+                                    <input id="task-checkbox-1" type="checkbox" class="w-4 h-4 text-neutral-700 bg-transparent border-2 border-neutral-700 rounded focus:ring-neutral-700" name="" id="" checked disabled>
+                                    <p class="text-sm">09:00 AM</p>
+                                </span>
                         </div>
-                        <div class="task row-start-3 flex flex-col items-center gap-2 px-1 py-5 w-[75px] bg-pink-200 rounded-3xl text-center">
-                            <label for="task-checkbox-2">
-                                <input id="task-checkbox-2" type="checkbox" class="w-4 h-4 text-neutral-700 bg-transparent border-2 border-neutral-700 rounded focus:ring-neutral-700" name="" id="" checked disabled>
-                                <h3 class="font-semibold text-sm">Operating System</h3>
-                                <p class="text-xs">09:00 AM</p>
-                            </label>
+                        <div class="task row-start-3 flex flex-col items-center gap-y-1 px-3 py-2 w-[110px] bg-pink-200 rounded-xl text-left">
+                                <h3 class="font-semibold text-base leading-tight">Operating System</h3>
+                                    <span class="w-full h-[2px] bg-neutral-900 rounded"></span>
+                                <p class="text-sm pb-2 leading-tight">Lorem ipsum dolor sit.</p>
+                                <span class="flex items-center gap-2">
+                                    <input id="task-checkbox-1" type="checkbox" class="w-4 h-4 text-neutral-700 bg-transparent border-2 border-neutral-700 rounded focus:ring-neutral-700" name="" id="" checked disabled>
+                                    <p class="text-sm">09:00 AM</p>
+                                </span>
                         </div>
                     <span class="date-badge col-start-2 flex flex-col gap-1 items-center justify-center">
                         <p class="month">Apr</p>
-                        <h3 class="date font-bold text-2xl">22</h3>
+                        <h3 class="date font-bold text-2xl lg:text-3xl">22</h3>
                         <p class="day">Mon</p>
                     </span>
                     <span class="date-badge col-start-3 flex flex-col gap-1 items-center justify-center">
                         <p class="month">Apr</p>
-                        <h3 class="date font-bold text-2xl">23</h3>
+                        <h3 class="date font-bold text-2xl lg:text-3xl">23</h3>
                         <p class="day">Tue</p>
                     </span>
-                    <div class="task col-start-3 row-start-2 flex flex-col items-center gap-2 px-1 py-5 w-[75px] bg-lime-400 rounded-3xl text-center">
-                        <label for="task-checkbox-3">
-                            <input id="task-checkbox-3" type="checkbox" class="w-4 h-4 text-neutral-700 bg-transparent border-2 border-neutral-700 rounded focus:ring-neutral-700" name="" id="" checked disabled>
-                            <h3 class="font-semibold text-sm">Interface Design</h3>
-                            <p class="text-xs">09:00 AM</p>
-                        </label>
+                    <div class="task col-start-3 row-start-2 flex flex-col items-center gap-y-1 px-3  py-2 w-[110px] bg-lime-400 rounded-xl text-left">
+                            <h3 class="font-semibold text-base leading-tight">Interface Design</h3>
+                                <span class="w-full h-[2px] bg-neutral-900 rounded"></span>
+                                <p class="text-sm pb-2 leading-tight">Lorem ipsum dolor sit.</p>
+                                <span class="flex items-center gap-2">
+                                    <input id="task-checkbox-1" type="checkbox" class="w-4 h-4 text-neutral-700 bg-transparent border-2 border-neutral-700 rounded focus:ring-neutral-700" name="" id="" checked disabled>
+                                    <p class="text-sm">09:00 AM</p>
+                                </span>
                     </div>
                     <span class="date-badge col-start-4 flex flex-col gap-1 items-center justify-center">
                         <p class="month">Apr</p>
-                        <h3 class="date font-bold text-2xl">24</h3>
+                        <h3 class="date font-bold text-2xl lg:text-3xl">24</h3>
                         <p class="day">Wed</p>
                     </span>
-                    <div class="task col-start-4 row-start-2 flex flex-col items-center gap-2 px-1 py-5 w-[75px] bg-orange-100 rounded-3xl text-center">
-                        <label for="task-checkbox-4">
-                            <input id="task-checkbox-4" type="checkbox" class="w-4 h-4 text-neutral-700 bg-transparent border-2 border-neutral-700 rounded focus:ring-neutral-700" name="" id="" disabled>
-                            <h3 class="font-semibold text-sm">Linear Algebra</h3>
-                            <p class="text-xs">09:00 AM</p>
-                        </label>
+                    <div class="task col-start-4 row-start-2 flex flex-col items-center gap-y-1 px-3 py-2 w-[110px] bg-orange-100 rounded-xl text-left">
+                            <h3 class="font-semibold text-base leading-tight">Linear Algebra</h3>
+                                <span class="w-full h-[2px] bg-neutral-900 rounded"></span>
+                                <p class="text-sm pb-2 leading-tight">Lorem ipsum dolor sit.</p>
+                                <span class="flex items-center gap-2">
+                                    <input id="task-checkbox-1" type="checkbox" class="w-4 h-4 text-neutral-700 bg-transparent border-2 border-neutral-700 rounded focus:ring-neutral-700" name="" id="" checked disabled>
+                                    <p class="text-sm">09:00 AM</p>
+                                </span>
                     </div>
                     <span class="date-badge col-start-5 flex flex-col gap-1 items-center justify-center">
                         <p class="month">Apr</p>
-                        <h3 class="date font-bold text-2xl">25</h3>
+                        <h3 class="date font-bold text-2xl lg:text-3xl">25</h3>
                         <p class="day">Thu</p>
                     </span>
                     <span class="date-badge col-start-6 flex flex-col gap-1 items-center justify-center">
                         <p class="month">Apr</p>
-                        <h3 class="date font-bold text-2xl">26</h3>
+                        <h3 class="date font-bold text-2xl lg:text-3xl">26</h3>
                         <p class="day">Fri</p>
                     </span>
-                    <div class="task col-start-6 row-start-2 flex flex-col items-center gap-2 px-1 py-5 w-[75px] bg-indigo-500 rounded-3xl text-center">
-                        <label for="task-checkbox-5">
-                            <input id="task-checkbox-5" type="checkbox" class="w-4 h-4 text-neutral-700 bg-transparent border-2 border-neutral-700 rounded focus:ring-neutral-700" name="" id="" disabled>
-                            <h3 class="font-semibold text-sm">Software Engine</h3>
-                            <p class="text-xs">09:00 AM</p>
-                        </label>
+                    <div class="task col-start-6 row-start-2 flex flex-col items-center gap-y-1 px-3 py-2 w-[110px] bg-indigo-500 rounded-xl text-left">
+                            <h3 class="font-semibold text-base leading-tight">Software Engine</h3>
+                                <span class="w-full h-[2px] bg-neutral-900 rounded"></span>
+                                <p class="text-sm pb-2 leading-tight">Lorem ipsum dolor sit.</p>
+                                <span class="flex items-center gap-2">
+                                    <input id="task-checkbox-1" type="checkbox" class="w-4 h-4 text-neutral-700 bg-transparent border-2 border-neutral-700 rounded focus:ring-neutral-700" name="" id="" checked disabled>
+                                    <p class="text-sm">09:00 AM</p>
+                                </span>
                     </div>
                     <span class="date-badge col-start-7 flex flex-col gap-1 items-center justify-center">
                         <p class="month">Apr</p>
-                        <h3 class="date font-bold text-2xl">27</h3>
+                        <h3 class="date font-bold text-2xl lg:text-3xl">27</h3>
                         <p class="day">Sat</p>
                     </span>
                 </div>

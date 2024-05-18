@@ -9,7 +9,7 @@
         @apply bg-gray-200 rounded-full;
     }
     .date-active {
-        @apply rounded-full bg-slate-200;
+        @apply rounded-full lg:rounded-xl bg-slate-200;
     }
 
     .sticky-navbar {
@@ -23,5 +23,8 @@
     }
     .img-style {
         @apply max-w-[240px] h-[170px] sm:h-[210px] rounded-xl overflow-hidden;
+    }
+    .grid-cols-r-7 {
+        grid-template-columns: repeat(7, 1fr);
     }
 }
