@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // get currentDate with param originalDate(now) to ensure that each calculated date starts from the same start date
     const currentDate = new Date(originalDate);
     const daysInWeek = 7;
-
     const dateBadge = document.querySelectorAll(".date-badge");
 
     // for each per week
@@ -86,25 +85,75 @@ document.addEventListener("DOMContentLoaded", () => {
         dayOfWeek[index].textContent = day;
         monthOfWeek[index].textContent = month;
 
+        console.log(originalDate.getDate());
+        console.log(date);
+        console.log(originalDate.getDate() == date);
+        console.log(originalDate.getMonth() == startOfWeek.getMonth());
+        console.log(
+            originalDate.getDate() == date &&
+                originalDate.getMonth() == startOfWeek.getMonth()
+        );
         // add class active for today
-        if (originalDate.getDate() == date) {
+        if (
+            originalDate.getDate() == date &&
+            originalDate.getMonth() == startOfWeek.getMonth()
+        ) {
             dateBadge[index].classList.add("date-active");
+        } else {
+            dateBadge[index].classList.remove("date-active");
         }
 
         // set currentDate to get date per week
         currentDate.setDate(currentDate.getDate() + 1);
     });
+
+    // EVENT CHOOSE WEEK
+    const optionWeeks = document.getElementById("weeks");
+    const weekDate = new Date(currentYear, 1, 11);
+    console.log(weekDate);
+
+    function changeWeek() {
+        dateOfWeek.forEach((dateElement, index) => {
+            // Update each day's date, day name, and month name
+            const day = dayNames[index];
+            const month = monthNames[weekDate.getMonth()];
+            const date = weekDate.getDate();
+
+            dateElement.textContent = date;
+            dayOfWeek[index].textContent = day;
+            monthOfWeek[index].textContent = month;
+
+            // add class active for today
+            if (
+                originalDate.getDate() == date &&
+                originalDate.getMonth() == weekDate.getMonth()
+            ) {
+                dateBadge[index].classList.add("date-active");
+            } else {
+                dateBadge[index].classList.remove("date-active");
+            }
+
+            // Move to the next day
+            weekDate.setDate(weekDate.getDate() + 1);
+        });
+    }
+
+    let previousValue = ""; // To store the previous value
+    let currentValue = ""; // To store the current value
+
+    optionWeeks.addEventListener("change", function () {
+        previousValue = currentValue;
+        currentValue = this.value;
+        if (currentValue > previousValue) {
+            changeWeek();
+        } else if (currentValue < previousValue) {
+            weekDate.setDate(weekDate.getDate() - 14);
+            changeWeek();
+        }
+    });
 });
 
 // NAVBAR EVENT
-
-const handleLoad = () => {
-    let header = document.querySelector("nav");
-    if (header) {
-        header.style.transform = "translateY(0)";
-    }
-};
-
 const nav = document.querySelector("nav ul");
 const navbar = document.querySelector("nav.nav-sticky");
 let prevScrollPos = window.scrollY;
@@ -132,4 +181,3 @@ const handleScroll = () => {
 };
 
 window.addEventListener("scroll", handleScroll);
-window.addEventListener("load", handleLoad, handleScroll);

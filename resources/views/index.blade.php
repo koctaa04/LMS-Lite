@@ -23,7 +23,7 @@
         <button type="button" class="flex gap-x-3 py-1 px-3 items-center text-sm rounded-lg transition-all duration-500 hover:ring-2 hover:ring-gray-600 hover:scale-90 md:me-0 focus:ring-2 focus:ring-gray-400 focus:scale-90" id="user-menu-button" aria-expanded="false" data-dropdown-toggle="user-dropdown" data-dropdown-placement="bottom">
         <span class="sr-only">Open user menu</span>
         <img class="w-10 h-10 rounded-full object-cover ring-1 ring-neutral-800" src="https://erinejkt48-profile.vercel.app/img/profile.jpg" alt="user photo">
-        <span class="font-semibold text-base hidden sm:inline">Hi, Aldrin's Girlfriend</span>
+        <span class="font-semibold text-base hidden sm:inline">Hi, Erine!</span>
     </button>
       <!-- Dropdown menu -->
       <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow" id="user-dropdown">
@@ -154,6 +154,31 @@
         </section>
         <section id="tasks" class="tasks-section flex flex-col gap-2 p-4 items-center">
             <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold ">Tasks</h2>
+            <form class="max-w-sm mx-auto mt-1" id="form-week">
+              <label for="weeks" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
+                <select id="weeks" class="transition-all duration-300 hover:ring-neutral-50 block items-center gap-3 rounded-full ring-2 ring-neutral-900 bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 w-full p-2.5">
+                  <option selected>Choose a Week</option>
+                  <option value="1">Week 1</option>
+                  <option value="2">Week 2</option>
+                  <option value="3">Week 3</option>
+                  <option value="4">Week 4</option>
+                  <option value="5">Week 5</option>
+                  <option value="6">Week 6</option>
+                  <option value="7">Week 7</option>
+                  <option value="8">Week 8</option>
+                  <option value="9">Week 9</option>
+                  <option value="10">Week 10</option>
+                  <option value="11">Week 11</option>
+                  <option value="12">Week 12</option>
+                  <option value="13">Week 13</option>
+                  <option value="14">Week 14</option>
+                  <option value="15">Week 15</option>
+                  <option value="16">Week 16</option>
+                  <option value="17">Week 17</option>
+                  <option value="18">Week 18</option>
+                  <svg xmlns="http://www.w3.org/2000/svg" height="15" class="self-center rounded-full ring-2 ring-neutral-900" viewBox="0 -960 960 960" width="15"><path d="M480-240 240-480l56-56 144 144v-368h80v368l144-144 56 56-240 240Z"/></svg>
+                </select>
+            </form>
             <div class="mx-2 p-2 w-full flex justify-center">
                 <div class="date-of-week grid max-w-lg sm:max-w-2xl lg:max-w-3xl xl:max-w-4xl w-full grid-cols-r-7 grid-rows-3 overflow-x-auto p-2 place-items-center gap-x-4 gap-y-2 [&>span]:font-semibold [&>span]:px-2 [&>span]:py-3 [&>span]:text-base lg:[&>span]:text-lg [&>span]:cursor-pointer  [&>div.task>label]:cursor-pointer">
                         <span class="date-badge col-start-1 flex flex-col gap-1 items-center justify-center">
