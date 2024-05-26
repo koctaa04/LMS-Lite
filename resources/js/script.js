@@ -108,8 +108,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // EVENT CHOOSE WEEK
-    const optionWeeks = document.getElementById("weeks");
+    const optionWeeks = document.querySelector(".weekOption");
+    const prevWeek = document.getElementById("prevWeek");
+    const nextWeek = document.getElementById("nextWeek");
     const weekDate = new Date(currentYear, 1, 11);
+    const minWeekDate = new Date(currentYear, 1, 11);
     console.log(weekDate);
 
     function changeWeek() {
@@ -118,6 +121,11 @@ document.addEventListener("DOMContentLoaded", () => {
             const day = dayNames[index];
             const month = monthNames[weekDate.getMonth()];
             const date = weekDate.getDate();
+
+            // for if date more than minWeekDate
+            if (weekDate < minWeekDate) {
+                weekDate.setDate(minWeekDate.getDate());
+            }
 
             dateElement.textContent = date;
             dayOfWeek[index].textContent = day;
@@ -138,18 +146,42 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    let previousValue = ""; // To store the previous value
-    let currentValue = ""; // To store the current value
+    let previousValue = 0; // To store the previous value
+    let currentValue = 0; // To store the current value
+    prevWeek.style.display = "none";
 
-    optionWeeks.addEventListener("change", function () {
+    prevWeek.addEventListener("click", function () {
         previousValue = currentValue;
-        currentValue = this.value;
-        if (currentValue > previousValue) {
-            changeWeek();
-        } else if (currentValue < previousValue) {
+        currentValue -= 1;
+        currentValue = currentValue == 0 ? currentValue + 1 : currentValue;
+
+        optionWeeks.textContent = `Week ${currentValue}`;
+        console.log(previousValue);
+        console.log(currentValue);
+
+        if (currentValue < previousValue) {
             weekDate.setDate(weekDate.getDate() - 14);
+            nextWeek.style.display = "block";
             changeWeek();
         }
+        prevWeek.style.display = currentValue == 1 ? "none" : "block";
+    });
+
+    nextWeek.addEventListener("click", function () {
+        console.log(true);
+        previousValue = currentValue;
+        currentValue += 1;
+
+        if (currentValue == 19) {
+            nextWeek.style.display = "none";
+        }
+
+        optionWeeks.textContent = `Week ${currentValue}`;
+        if (currentValue > previousValue) {
+            prevWeek.style.display = "block";
+            changeWeek();
+        }
+        prevWeek.style.display = currentValue == 1 ? "none" : "block";
     });
 });
 

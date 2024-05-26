@@ -157,15 +157,15 @@
             <div aria-label="Page navigation example" class="mt-3">
                 <ul class="inline-flex items-center -space-x-px text-base h-10">
 
-                    <span class="sr-only" class="cursor-pointer">Previous</span>
-                    <svg class="w-3.5 h-3.5 rtl:rotate-180 cursor-pointer" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <span class="sr-only" class=" cursor-pointer">Previous</span>
+                    <svg id="prevWeek" class="w-3.5 h-3.5 rtl:rotate-180 cursor-pointer" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
                     </svg>
 
-                    <span class="weekOption flex items-center justify-center px-6 h-10 font-semibold leading-tight text-neutral-800 bg-white hover:bg-gray-100 hover:text-gray-700 text-base sm:text-lg">Choose Week</span>
+                    <span class="weekOption flex items-center justify-center px-6 h-10 font-semibold leading-tight text-neutral-800 bg-white hover:bg-gray-100 hover:text-gray-700 text-base sm:text-lg">Week -</span>
 
-                    <span class="sr-only" class="cursor-pointer">Next</span>
-                    <svg class="w-3.5 h-3.5 rtl:rotate-180 cursor-pointer" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                    <span class="sr-only" class=" cursor-pointer">Next</span>
+                    <svg id="nextWeek" class="w-3.5 h-3.5 rtl:rotate-180 cursor-pointer" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
                       <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
                     </svg>
                 </ul>
