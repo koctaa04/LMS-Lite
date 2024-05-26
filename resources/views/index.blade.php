@@ -154,7 +154,23 @@
         </section>
         <section id="tasks" class="tasks-section flex flex-col gap-2 p-4 items-center">
             <h2 class="text-2xl sm:text-3xl lg:text-4xl font-semibold ">Tasks</h2>
-            <form class="max-w-sm mx-auto mt-1" id="form-week">
+            <div aria-label="Page navigation example" class="mt-3">
+                <ul class="inline-flex items-center -space-x-px text-base h-10">
+
+                    <span class="sr-only" class="cursor-pointer">Previous</span>
+                    <svg class="w-3.5 h-3.5 rtl:rotate-180 cursor-pointer" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+                    </svg>
+
+                    <span class="weekOption flex items-center justify-center px-6 h-10 font-semibold leading-tight text-neutral-800 bg-white hover:bg-gray-100 hover:text-gray-700 text-base sm:text-lg">Choose Week</span>
+
+                    <span class="sr-only" class="cursor-pointer">Next</span>
+                    <svg class="w-3.5 h-3.5 rtl:rotate-180 cursor-pointer" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+                      <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+                    </svg>
+                </ul>
+              </div>
+            {{-- <form class="max-w-sm mx-auto mt-1" id="form-week">
               <label for="weeks" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select an option</label>
                 <select id="weeks" class="transition-all duration-300 hover:ring-neutral-50 block items-center gap-3 rounded-full ring-2 ring-neutral-900 bg-gray-50 border border-gray-300 text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 w-full p-2.5">
                   <option selected>Choose a Week</option>
@@ -178,7 +194,7 @@
                   <option value="18">Week 18</option>
                   <svg xmlns="http://www.w3.org/2000/svg" height="15" class="self-center rounded-full ring-2 ring-neutral-900" viewBox="0 -960 960 960" width="15"><path d="M480-240 240-480l56-56 144 144v-368h80v368l144-144 56 56-240 240Z"/></svg>
                 </select>
-            </form>
+            </form> --}}
             <div class="mx-2 p-2 w-full flex justify-center">
                 <div class="date-of-week grid max-w-lg sm:max-w-2xl lg:max-w-3xl xl:max-w-4xl w-full grid-cols-r-7 grid-rows-3 overflow-x-auto p-2 place-items-center gap-x-4 gap-y-2 [&>span]:font-semibold [&>span]:px-2 [&>span]:py-3 [&>span]:text-base lg:[&>span]:text-lg [&>span]:cursor-pointer  [&>div.task>label]:cursor-pointer">
                         <span class="date-badge col-start-1 flex flex-col gap-1 items-center justify-center">
