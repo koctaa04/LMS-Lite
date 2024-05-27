@@ -40,9 +40,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const dateOfWeek = document.querySelectorAll(".date");
 
     // get currentDate with param originalDate(now) to ensure that each calculated date starts from the same start date
-    const currentDate = new Date(originalDate);
+    const manipulationDate = new Date(originalDate);
     const daysInWeek = 7;
     const dateBadge = document.querySelectorAll(".date-badge");
+    const currentDate = new Date(manipulationDate);
+    const optionWeeks = document.querySelector(".weekOption");
+    const minWeekDate = new Date(currentYear, 1, 11);
+    const getWeek = function () {
+        const firstDayOfYear = new Date(minWeekDate);
+        const pastDaysOfYear = (currentDate - firstDayOfYear) / 86400000; // 86400000 ms in a day
+        return Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
+    };
 
     // for each per week
     // get param dateElement & index, where the index start from 0 to 6
@@ -51,30 +59,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // what a day of the week is it now like mon is day-1. cause start from 0
         const dayOfWeekStart = startOfWeek.getDay();
-        console.log(`current date : ${currentDate.getDate()}`);
+        console.log(`current date : ${manipulationDate.getDate()}`);
         console.log(`dayOfWeekStart : day ${dayOfWeekStart}`);
 
         // set date of week from current date like (13) - 1
-        startOfWeek.setDate(currentDate.getDate() - dayOfWeekStart);
+        startOfWeek.setDate(manipulationDate.getDate() - dayOfWeekStart);
 
         console.log(
-            `current week date = currentDate - dayOfWeekStart = startOfWeek.getDate()`
+            `current week date = manipulationDate - dayOfWeekStart = startOfWeek.getDate()`
         );
         console.log(
-            `current week date : ${currentDate.getDate()} - ${dayOfWeekStart} = ${startOfWeek.getDate()}`
+            `current week date : ${manipulationDate.getDate()} - ${dayOfWeekStart} = ${startOfWeek.getDate()}`
         );
 
         // for forward to next week when value of index more than equal to 7
         if (index >= daysInWeek) {
-            startOfWeek.setDate(currentDate.getDate() + daysInWeek); // forward to next week
+            startOfWeek.setDate(manipulationDate.getDate() + daysInWeek); // forward to next week
         }
 
-        // get dayName for currentDate from array dayNames
+        // get dayName for manipulationDate from array dayNames
         // like dayNames[0 == "sun"];
         const day = dayNames[index];
-        // get monthName for currentDate from array monthNames
+        // get monthName for manipulationDate from array monthNames
         // like monthNames[5 == "May"];
-        const month = monthNames[startOfWeek.getMonth()];
+        const month = monthNames[manipulationDate.getMonth()];
         // get date where date is start from date per week like 12 is sun
         const date = startOfWeek.getDate();
         console.log(date);
@@ -103,28 +111,30 @@ document.addEventListener("DOMContentLoaded", () => {
             dateBadge[index].classList.remove("date-active");
         }
 
-        // set currentDate to get date per week
-        currentDate.setDate(currentDate.getDate() + 1);
+        // set manipulationDate to get date per week
+        manipulationDate.setDate(manipulationDate.getDate() + 1);
+        optionWeeks.textContent = `Week ${getWeek()}`;
     });
 
     // EVENT CHOOSE WEEK
-    const optionWeeks = document.querySelector(".weekOption");
     const prevWeek = document.getElementById("prevWeek");
     const nextWeek = document.getElementById("nextWeek");
-    const weekDate = new Date(currentYear, 1, 11);
-    const minWeekDate = new Date(currentYear, 1, 11);
-    console.log(weekDate);
+
+    // for restart current date to prev week
+    manipulationDate.setDate(manipulationDate.getDate() - 1);
 
     function changeWeek() {
+        console.log(manipulationDate);
+
         dateOfWeek.forEach((dateElement, index) => {
             // Update each day's date, day name, and month name
             const day = dayNames[index];
-            const month = monthNames[weekDate.getMonth()];
-            const date = weekDate.getDate();
+            const month = monthNames[manipulationDate.getMonth()];
+            const date = manipulationDate.getDate();
 
             // for if date more than minWeekDate
-            if (weekDate < minWeekDate) {
-                weekDate.setDate(minWeekDate.getDate());
+            if (manipulationDate < minWeekDate) {
+                manipulationDate.setDate(minWeekDate.getDate());
             }
 
             dateElement.textContent = date;
@@ -134,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // add class active for today
             if (
                 originalDate.getDate() == date &&
-                originalDate.getMonth() == weekDate.getMonth()
+                originalDate.getMonth() == manipulationDate.getMonth()
             ) {
                 dateBadge[index].classList.add("date-active");
             } else {
@@ -142,13 +152,13 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             // Move to the next day
-            weekDate.setDate(weekDate.getDate() + 1);
+            manipulationDate.setDate(manipulationDate.getDate() + 1);
         });
     }
 
     let previousValue = 0; // To store the previous value
-    let currentValue = 0; // To store the current value
-    prevWeek.style.display = "none";
+    let currentValue = getWeek(); // To store the current value
+    console.log(`currentValue : ${currentValue}`);
 
     prevWeek.addEventListener("click", function () {
         previousValue = currentValue;
@@ -160,7 +170,8 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(currentValue);
 
         if (currentValue < previousValue) {
-            weekDate.setDate(weekDate.getDate() - 14);
+            manipulationDate.setDate(manipulationDate.getDate() - 14);
+            console.log(manipulationDate);
             nextWeek.style.display = "block";
             changeWeek();
         }
